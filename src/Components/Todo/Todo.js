@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Todo.css";
-import AddTodo from '../AddTodo/AddTodo.js';
 import ShowTodo from '../ShowTodo/ShowTodo';
 
 function Todo() {
@@ -9,7 +8,6 @@ function Todo() {
     <div className='todo-container'>
         <h1>React Todo</h1>
         <ShowTodo />
-        <AddTodo />
     </div>
   )
 }

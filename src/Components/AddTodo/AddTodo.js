@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useContext } from 'react';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../firebase.js';
+import { Allitems } from '../ShowTodo/ShowTodo.js';
 import "./AddTodo.css";
 
 function AddTodo() {
   const [item, setItem] = useState();
+  const itemsSize = useContext(Allitems);
+
   const handleSubmit = async()=>{
      if(item !== ""){
         await addDoc(collection(db, "todos"),{
-           item
+           item,
+           index: itemsSize
         });
      }
      else{
